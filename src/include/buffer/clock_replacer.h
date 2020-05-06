@@ -47,6 +47,13 @@ class ClockReplacer : public Replacer {
 
  private:
   // TODO(student): implement me!
+  struct Meta {
+    bool pin_, ref_;
+  };
+  size_t clock_hand_;
+  size_t clock_size_;
+  std::vector<Meta> frames_;
+  std::mutex mutex_;
 };
 
 }  // namespace bustub
