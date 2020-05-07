@@ -87,6 +87,7 @@ class LinearProbeHashTable : public HashTable<KeyType, ValueType, KeyComparator>
   size_t GetSize();
 
  private:
+  bool InternalInsert(const KeyType &key, const ValueType &value, bool *full = nullptr);
   // member variable
   page_id_t header_page_id_;
   BufferPoolManager *buffer_pool_manager_;

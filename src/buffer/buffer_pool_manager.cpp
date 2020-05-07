@@ -47,6 +47,7 @@ Page *BufferPoolManager::FetchPageImpl(page_id_t page_id) {
     auto page = pages_ + page_table_[page_id];
     page->pin_count_++;
     replacer_->Pin(page_table_[page_id]);
+    return page;
   }
   frame_id_t frame_id;
   Page *page = nullptr;
